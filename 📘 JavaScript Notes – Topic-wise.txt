@@ -1,0 +1,248 @@
+📘 JavaScript Notes – Topic-wise Reference
+
+Below are concise, easy-to-understand JavaScript notes with syntax examples and short explanations.
+
+1️⃣ Variables (var, let, const)
+var
+
+Function-scoped
+
+Can be re-declared & updated
+
+Gets hoisted (initialized with undefined)
+
+var a = 10;
+var a = 20; // allowed
+
+let
+
+Block-scoped
+
+Cannot be re-declared in the same scope
+
+Can be updated
+
+Hoisted but not initialized (Temporal Dead Zone)
+
+let x = 10;
+x = 20; // allowed
+
+const
+
+Block-scoped
+
+Cannot be re-declared or updated
+
+Must be initialized at declaration
+
+const pi = 3.14;
+
+2️⃣ Data Types
+Primitive
+
+String
+
+Number
+
+Boolean
+
+Null
+
+Undefined
+
+BigInt
+
+Symbol
+
+let name = "Sahil";
+let age = 22;
+let isOk = true;
+let x; // undefined
+
+Non-Primitive
+
+Object
+
+Array
+
+Function
+
+let person = { name: "John" };
+let nums = [1, 2, 3];
+
+3️⃣ Functions & Arrow Functions
+Normal Function
+function add(a, b) {
+  return a + b;
+}
+
+Function Expression
+const add = function(a, b) {
+  return a + b;
+};
+
+Arrow Function
+const add = (a, b) => a + b;
+
+Differences
+
+Arrow functions do NOT have their own this
+
+Cannot be used as constructors
+
+4️⃣ Scope (Block, Function, Global)
+Global Scope
+
+Accessible everywhere.
+
+Function Scope
+
+Variables declared with var inside function → only inside that function.
+
+function test() {
+  var x = 10; // function-scoped
+}
+
+Block Scope
+
+Variables declared with let and const inside {}.
+
+{
+  let a = 5; // block-scoped
+}
+
+5️⃣ Hoisting
+
+Hoisting = variable & function declarations are moved to the top.
+
+Example:
+console.log(a); // undefined
+var a = 5;
+
+let/const hoisting
+
+They are hoisted but not initialized → ReferenceError.
+
+6️⃣ Arrays & Array Methods
+Common Methods
+let arr = [1, 2, 3];
+
+arr.push(4);    // add end
+arr.pop();      // remove end
+arr.shift();    // remove start
+arr.unshift(0); // add start
+arr.includes(2); 
+arr.indexOf(3);
+
+arr.map(x => x * 2);
+arr.filter(x => x > 1);
+arr.reduce((a, b) => a + b, 0);
+
+7️⃣ Objects & Object Methods
+Object Creation
+const obj = {
+  name: "Sahil",
+  age: 25
+};
+
+Accessing Values
+obj.name;
+obj["age"];
+
+Useful Methods
+Object.keys(obj);
+Object.values(obj);
+Object.entries(obj);
+
+8️⃣ Loops (for, while, forEach)
+For Loop
+for (let i = 0; i < 5; i++) { }
+
+While Loop
+let i = 0;
+while (i < 5) { i++; }
+
+forEach
+arr.forEach(item => console.log(item));
+
+9️⃣ DOM Manipulation
+Select Elements
+document.getElementById("title");
+document.querySelector(".className");
+
+Modify Text / HTML
+element.innerText = "Hello";
+element.innerHTML = "<b>Hello</b>";
+
+Modify CSS
+element.style.color = "red";
+
+🔟 Events
+Adding Event Listener
+button.addEventListener("click", function() {
+  console.log("Clicked!");
+});
+
+Common Events
+
+click
+
+change
+
+keyup / keydown
+
+submit
+
+mouseover
+
+1️⃣1️⃣ Callbacks, Promises & Async/Await
+Callback
+function fetchData(callback) {
+  callback("Done");
+}
+
+Promise
+let p = new Promise((resolve, reject) => {
+  resolve("Success");
+});
+
+Async/Await
+async function getData() {
+  const result = await p;
+}
+
+1️⃣2️⃣ Error Handling
+Try–Catch
+try {
+  throw new Error("Something went wrong");
+} catch (err) {
+  console.log(err.message);
+}
+
+1️⃣3️⃣ ES6+ Features
+
+let & const
+
+Arrow functions
+
+Template literals
+
+`Hello ${name}`
+
+
+Spread operator
+
+let arr2 = [...arr];
+
+
+Destructuring
+
+const { name, age } = obj;
+
+
+Classes
+
+class Person { }
+
+
+Modules (import / export)
